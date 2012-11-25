@@ -86,10 +86,6 @@ class ZyAddFileAndCmdHeader(sublime_plugin.EventListener):
             if pattern.match(current_file):
                 return
 
-        if os.path.basename(view.file_name()) == 'zy_file_header.py' or \
-                os.path.basename(view.file_name()) == 'Preferences.sublime-settings':
-            pass
-        else:
-            view.run_command('zy_file_modified')
-            view.run_command('zy_add_cmd_header')
-            view.run_command('zy_add_file_footer')
+        view.run_command('zy_file_modified')
+        view.run_command('zy_add_cmd_header')
+        view.run_command('zy_add_file_footer')
