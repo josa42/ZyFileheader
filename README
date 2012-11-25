@@ -1,0 +1,9 @@
+ZyFileheader is a plugin of Sublime Text2 which helps to add file header like "#!/usr/bin/env python" to your new created file, and you could define the header for yourself. Currently the plugin support python and shell, which is my mostly used. 
+
+The settings is like this, you could put it in your Perferences.sublime-settings by click "Perferences"=>"Settings - User": 
+"ignore_files": ["zy_file_header.py", "default.sublime-settings", "Preferences.sublime-settings"], 
+"file_header_format": "#*********************************************************#\n# @@ScriptName: \n# @@Author: @@author<@@email>\n# @@Create Date:\n# @@Modify Date: \n# @@Function:\n#*********************************************************#",
+"python": "#!/usr/bin/env python\n# -*- coding:utf-8 -*-",
+"shell" : "#!/usr/bin/env bash",
+"author" : "zhenyu", 
+"email" : "Your email here"
