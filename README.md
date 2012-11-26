@@ -43,3 +43,8 @@ You could put settings below in your Perferences.sublime-settings by click "Perf
         "author" : "Your name here", 
         "email" : "Your email here"
     }
+
+# Features
+* Modify Date will change each time you save(CTRL+S) the file
+* ScriptName will change each time you save as(CTRL+SHIFT+S) the file
+* CTRL+1 could add defined header to your current file which has no header

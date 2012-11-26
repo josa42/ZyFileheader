@@ -13,7 +13,6 @@ class ZyFileNewHeaderCommand(sublime_plugin.TextCommand):
         """replace @@author and @@email with the user definied value"""
         author = s.get('author')
         email = s.get('email')
-        print email
         file_header_format = file_header_format.replace('@@author', author)
         file_header_format = file_header_format.replace('@@email', email)
 
@@ -73,6 +72,13 @@ class ZyFileModifiedCommand(sublime_plugin.TextCommand):
                               '# @@ScriptName: ' + os.path.basename(self.view.file_name()))
 
 
+class ZyAddFileHeaderManually(sublime_plugin.TextCommand):
+    def run(self, edit):
+        self.view.run_command('zy_file_new_header')
+        self.view.run_command('zy_file_modified')
+        self.view.run_command('zy_add_cmd_header')
+
+
 class ZyAddFileAndCmdHeader(sublime_plugin.EventListener):
     def on_new(self, view):
         view.run_command('zy_file_new_header')
@@ -80,9 +86,9 @@ class ZyAddFileAndCmdHeader(sublime_plugin.EventListener):
     def on_pre_save(self, view):
         s = sublime.load_settings('Preferences.sublime-settings')
         ignore_files = s.get('ignore_files')
+        current_file = os.path.basename(view.file_name())
         for f in ignore_files:
             pattern = re.compile(f)
-            current_file = os.path.basename(view.file_name())
             if pattern.match(current_file):
                 return
 

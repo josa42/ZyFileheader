@@ -1,0 +1,3 @@
+[
+    { "keys": ["ctrl+1"], "command": "zy_add_file_header_manually" }
+]
