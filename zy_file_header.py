@@ -77,7 +77,7 @@ class ZyAddFileAndCmdHeader(sublime_plugin.EventListener):
     def on_new(self, view):
         view.run_command('zy_file_new_header')
 
-    def on_post_save(self, view):
+    def on_pre_save(self, view):
         s = sublime.load_settings('Preferences.sublime-settings')
         ignore_files = s.get('ignore_files')
         for f in ignore_files:
