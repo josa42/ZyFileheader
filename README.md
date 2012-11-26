@@ -1,7 +1,7 @@
 # Description
 
 ZyFileheader is a plugin of Sublime Text2 which helps to add file header like 
-#!/usr/bin/env python
+   #!/usr/bin/env python
    # -*- coding:utf-8 -*-
    #*********************************************************#
    # @@ScriptName: a.py
