@@ -3,6 +3,8 @@
 #################
 
 *.pydevproject
+.gitignore
+.gitattributes
 .project
 .metadata
 bin/
