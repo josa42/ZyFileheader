@@ -56,6 +56,6 @@ You could put settings below in your Perferences.sublime-settings by click "Perf
 * Modify Date will change each time you save(CTRL+S) the file
 * ScriptName will change each time you save as(CTRL+SHIFT+S) the file
 * CTRL + 1 could add defined header to your current file which has no header
-* Custom time format, using Python datetime format, please refer to 
+* Custom time format, using Python datetime format, please refer to https://github.com/fjctlzy/ZyFileheader/blob/master/time_format.md
 * CTRL + 1 will use file ctime as @@Create Date for existed file
 * You could set add_on_created to false so that when file is created, the header won't be added automatically
