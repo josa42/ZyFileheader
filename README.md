@@ -38,6 +38,8 @@ You could put settings below in your Perferences.sublime-settings by click "Perf
     "zy_file_header" : {
         "add_on_created": true,
         "file_header_format": "#*********************************************************#\n# @@ScriptName: \n# @@Author: @@author<@@email>\n# @@Create Date:\n# @@Modify Date: \n# @@Function:\n#*********************************************************#",
+        "file_header_format.php": "/*********************************************************#\n# @@ScriptName: \n# @@Author: @@author<@@email>\n# @@Create Date:\n# @@Modify Date: \n# @@Function:\n#*********************************************************/",
+        "file_header_format.c": "/*********************************************************#\n# @@ScriptName: \n# @@Author: @@author<@@email>\n# @@Create Date:\n# @@Modify Date: \n# @@Function:\n#*********************************************************/",
         "python": "#!/usr/bin/env python\n# -*- coding:utf-8 -*-",
         "shell": "#!/usr/bin/env bash",
         "author": "your name here",
@@ -59,3 +61,8 @@ You could put settings below in your Perferences.sublime-settings by click "Perf
 * Custom time format, using Python datetime format, please refer to https://github.com/fjctlzy/ZyFileheader/blob/master/time_format.md
 * CTRL + 1 will use file ctime as @@Create Date for existed file
 * You could set add_on_created to false so that when file is created, the header won't be added automatically
+* Multiple header formats such as(but add_on_created should be set to false now):
+        "file_header_format.c":"xxxxxxx"
+        "file_header_format.php": "/**/"
+        "file_header_format.py": "#######"
+    
