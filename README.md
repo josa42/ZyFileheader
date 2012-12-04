@@ -35,16 +35,27 @@ to your new created file, and you could define the header for yourself. Currentl
 
 You could put settings below in your Perferences.sublime-settings by click "Perferences"=>"Settings - User": 
 
-    {
-        "ignore_files": ["zy_file_header.py", "default.sublime-settings", "Preferences.sublime-settings"], 
+    "zy_file_header" : {
+        "add_on_created": true,
         "file_header_format": "#*********************************************************#\n# @@ScriptName: \n# @@Author: @@author<@@email>\n# @@Create Date:\n# @@Modify Date: \n# @@Function:\n#*********************************************************#",
         "python": "#!/usr/bin/env python\n# -*- coding:utf-8 -*-",
-        "shell" : "#!/usr/bin/env bash",
-        "author" : "Your name here", 
-        "email" : "Your email here"
+        "shell": "#!/usr/bin/env bash",
+        "author": "your name here",
+        "email": "your email here",
+        "time_format": "%Y-%m-%d %H:%M:%S",
+        "ignore_files":
+        [
+            ".*.sublime.*",
+            "README",
+            ".*.sublime-settings",
+            "zy_file_header.py"
+        ]
     }
 
 # Features
 * Modify Date will change each time you save(CTRL+S) the file
 * ScriptName will change each time you save as(CTRL+SHIFT+S) the file
-* CTRL+1 could add defined header to your current file which has no header
+* CTRL + 1 could add defined header to your current file which has no header
+* Custom time format, using Python datetime format, please refer to 
+* CTRL + 1 will use file ctime as @@Create Date for existed file
+* You could set add_on_created to false so that when file is created, the header won't be added automatically
