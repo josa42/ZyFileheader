@@ -60,7 +60,7 @@ You could put settings below in your Perferences.sublime-settings by click "Perf
 * CTRL + 1 could add defined header to your current file which has no header
 * Custom time format, using Python datetime format, please refer to https://github.com/fjctlzy/ZyFileheader/blob/master/time_format.md
 * CTRL + 1 will use file ctime as @@Create Date for existed file
-* You could set add_on_created to false so that when file is created, the header won't be added automatically
+* You could set add_on_created to false so that when file is created, the header won't be added automatically(set this to be false if you want to use multiple header formats functions now)
 * Multiple header formats such as(but add_on_created should be set to false now):
         "file_header_format.c":"xxxxxxx"
         "file_header_format.php": "/**/"
