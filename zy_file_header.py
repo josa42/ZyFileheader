@@ -100,16 +100,26 @@ class ZyFileModifiedCommand(sublime_plugin.TextCommand):
         if modified_date_region:
             line = self.view.line(modified_date_region)
             now = datetime.datetime.now().strftime(ZyConfig.get_singleton().get('time_format'))
+            string_line = self.view.substr(line)
+            before_pos = string_line.find('@@Modify Date')
+            before_string = ''
+            if before_pos >= 0:
+                before_string = string_line[0:before_pos]
             self.view.replace(edit,
                               line,
-                              '# @@Modify Date: ' + now)
+                              before_string + '@@Modify Date: ' + now)
 
         file_name_region = self.view.find('@@ScriptName', 0)
         if file_name_region:
             line = self.view.line(file_name_region)
+            string_line = self.view.substr(line)
+            before_pos = string_line.find('@@ScriptName')
+            before_string = ''
+            if before_pos >= 0:
+                before_string = string_line[0:before_pos]
             self.view.replace(edit,
                               line,
-                              '# @@ScriptName: ' + os.path.basename(self.view.file_name()))
+                              before_string + '@@ScriptName: ' + os.path.basename(self.view.file_name()))
 
 
 class ZyAddFileHeaderManually(sublime_plugin.TextCommand):
